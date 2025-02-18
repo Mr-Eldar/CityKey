@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --background: #1c2c36;
+    --white-color: #fff;
+
+    --accent-color: #cb9c5f;
+
+    --transition: 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.head__logo {
+    width: 150px;
+    height: 125px;
+}
+
+.head__navigation {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--background);
+    color: var(--white-color);
+}
+
+.item__links {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.links__item {
+    cursor: pointer;
+    font-size: 17px;
+    transition: var(--transition);
+}
+
+.links__item a {
+    color: var(--white-color);
+    transition: var(--transition);
+}
+
+.links__item:hover a{
+    color: var(--accent-color);
+}
+
+.head__buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 17px;
+}
+
+.vertical__line {
+    width: 2px;
+    height: 20px;
+    background: var(--accent-color);
+}
+
+.btn__reg {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid var(--accent-color);
+    background: none;
+    transition: var(--transition);
+    color: var(--white-color);
+}
+
+.btn__reg:hover {
+    background: var(--accent-color);
+    color: var(--white-color);
+}
+
+.btn__log {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid var(--white-color);
+    transition: var(--transition);
+    color: var(--white-color);
+}
+
+.btn__log:hover {
+    background: var(--white-color);
+    color: var(--background);
+}
+
+.account {
+    display: none;
+    display: flex;
+    align-items: center;
+}
+
+#user-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+#user-name {
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--white-color);
+    transition: var(--transition);
+}
+
+#user-name:hover {
+    color: var(--accent-color);
+}
+
+/*! Main */
+
+main {
+    background: var(--background);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.main__title {
+    color: var(--white-color);
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+    font-weight: 600;
+}
+
+.account__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 200px;
+    top: 25%;
+}
+
+#user-image__2 {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.text__info {
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    left: 0;
+    top: 105%;
+}
+
+#user-name__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#user-email__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#user-role__content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#user-email {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+#user-role {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.orders {
+    color: var(--accent-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}

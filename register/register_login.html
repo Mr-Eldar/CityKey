@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/register/css/main.css">
+    <title>Городской Ключ</title>
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <h2 id="form-title">Регистрация</h2>
+
+            <input type="text" id="name" placeholder="Имя">
+            <input type="email" id="email" placeholder="Введите email">
+            <input type="password" id="password" placeholder="Введите пароль">
+            <button id="submit-btn">Зарегистрироваться</button>
+
+                <button id="google-signin">Войти через <img src="/register/google.webp" alt=""></button>
+
+            <p id="toggle-form">Уже есть аккаунт? <a href="#">Войти</a></p>
+        </div>
+    </main>
+
+    <script type="module">
+        import { 
+            initializeApp 
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+
+        import { 
+            getAuth, 
+            createUserWithEmailAndPassword, 
+            signInWithEmailAndPassword, 
+            onAuthStateChanged, 
+            signOut, 
+            updateProfile,
+            signInWithPopup,
+            GoogleAuthProvider
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // 🔹 Firebase конфигурация
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2ip3ZNS23CkckzbayIBUGzjzeV4ehngw",
+            authDomain: "citykey-45fda.firebaseapp.com",
+            projectId: "citykey-45fda",
+            storageBucket: "citykey-45fda.firebasestorage.app",
+            messagingSenderId: "339147353166",
+            appId: "1:339147353166:web:5c83b83a5eaf11b9c6271f"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        // 🔹 Элементы страницы
+        const formTitle = document.getElementById("form-title");
+        const submitBtn = document.getElementById("submit-btn");
+        const toggleForm = document.getElementById("toggle-form");
+        const nameField = document.getElementById("name");
+        const emailField = document.getElementById("email");
+        const passwordField = document.getElementById("password");
+
+        const accountSection = document.querySelector(".account");
+        const userNameSpan = document.getElementById("user-name");
+        const logoutBtn = document.getElementById("logout-btn");
+        const googleSigninBtn = document.getElementById("google-signin");
+
+        // 🔹 Регистрация и вход
+        submitBtn.addEventListener("click", async function () {
+            const email = emailField.value;
+            const password = passwordField.value;
+            const name = nameField.value;
+
+            if (formTitle.textContent === "Регистрация") {
+                try {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
+
+                    // 🔹 Устанавливаем имя пользователя
+                    await updateProfile(user, { displayName: name });
+                    await user.reload(); // Обновляем данные пользователя
+
+                    alert("Аккаунт успешно создан!");
+                    window.location.href = "/home/index.html"; // ✅ Переход на главную
+                } catch (error) {
+                    alert("Ошибка: " + error.message);
+                }
+            } else {
+                try {
+                    await signInWithEmailAndPassword(auth, email, password);
+                    window.location.href = "/home/index.html"; // ✅ Переход на главную
+                } catch (error) {
+                    console.log("Ошибка входа: " + error.message);
+                }
+            }
+        });
+
+        googleSigninBtn.addEventListener("click", async () => {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                // В случае успешного входа
+                window.location.href = "/home/index.html"; // Переход на главную страницу
+            } catch (error) {
+                console.log("Ошибка входа через Google: " + error.message);
+            }
+        });
+
+        // 🔹 Переключение формы (Вход/Регистрация)
+        toggleForm.addEventListener("click", function (event) {
+            event.preventDefault();
+            if (formTitle.textContent === "Регистрация") {
+                switchToLogin();
+            } else {
+                switchToRegister();
+            }
+        });
+
+        function switchToLogin() {
+            formTitle.textContent = "Вход";
+            submitBtn.textContent = "Войти";
+            toggleForm.innerHTML = `Нет аккаунта? <a href="#">Регистрация</a>`;
+            nameField.style.display = "none"; // ❌ Скрываем поле "Имя"
+        }
+
+        function switchToRegister() {
+            formTitle.textContent = "Регистрация";
+            submitBtn.textContent = "Зарегистрироваться";
+            toggleForm.innerHTML = `Уже есть аккаунт? <a href="#">Войти</a>`;
+            nameField.style.display = "block"; // ✅ Показываем поле "Имя"
+        }
+    </script>
+</body>
+</html>

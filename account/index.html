@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/account/css/main.css">
+    <title>Городской Ключ</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="head__navigation">
+                <ul class="navigation">
+                    <li class="nav__item">
+                        <img class="head__logo" src="/home/src/citykey__logo.png" alt="logo">
+                    </li>
+                    <li class="nav__item">
+                        <ul class="item__links">
+                            <li class="links__item">
+                                <a href="/home/index.html">Главная</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="">О нас</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="">Категории</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="">Волонтерство</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="">Отзывы</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <div id='head__buttons' class="head__buttons">
+                            <a href="/register/register_login.html"><div class="btn__reg">Регистрация</div></a>
+                            <div class="vertical__line"></div>
+                            <a href="/register/register_login.html"><div class="btn__log">Вход</div></a>
+                        </div>
+                        <div class="account">
+                            <a href="/account/index.html"><span id="user-name"></span></a>
+                            <!-- Элемент для отображения изображения пользователя -->
+                            <img id="user-image" src="" alt="User Image">
+                            <!-- <button id="logout-btn">Выйти</button>   -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="main__title">Личный Кабинет</h1>
+
+            <div class="account__info">
+                <img id="user-image__2" src="" alt="User Image">
+
+                <div class="text__info">
+                    <h2 id="user-name__content">Имя: <span id="user-name-2"></span></h2>
+                    <h2 id="user-email__content">Почта: <span id="user-email"></span></h2>
+                </div>
+            </div>
+
+            <div class="orders">
+                <h3 class="orders__title">Пока что этот список пуст</h3>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { 
+            initializeApp 
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+
+        import { 
+            getAuth, 
+            onAuthStateChanged, 
+            signOut 
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // 🔹 Firebase конфигурация
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2ip3ZNS23CkckzbayIBUGzjzeV4ehngw",
+            authDomain: "citykey-45fda.firebaseapp.com",
+            projectId: "citykey-45fda",
+            storageBucket: "citykey-45fda.firebasestorage.app",
+            messagingSenderId: "339147353166",
+            appId: "1:339147353166:web:5c83b83a5eaf11b9c6271f"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // 🔹 Элементы страницы
+        const logoutBtn = document.getElementById("logout-btn");
+        const accountSection = document.querySelector(".account");
+        const headButtons = document.getElementById("head__buttons");
+        const userNameSpan2 = document.getElementById("user-name-2");
+        const userNameSpan = document.getElementById("user-name");
+        const userImage = document.getElementById("user-image"); // Элемент для изображения
+        const userImage2 = document.getElementById("user-image__2"); // Элемент для изображения
+        const userEmailSpan = document.getElementById("user-email");
+
+        // 🔹 Проверяем, авторизован ли пользователь
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                headButtons.style.display = "none"; // ❌ Скрываем кнопки "Вход" и "Регистрация"
+                accountSection.style.display = "flex"; // ✅ Показываем секцию аккаунта
+
+                userNameSpan.textContent = user.displayName || "Пользователь";
+                userNameSpan2.textContent = user.displayName || "Пользователь";
+                userEmailSpan.textContent = user.email;
+
+                if (user.photoURL) {
+                    userImage.src = user.photoURL; // ✅ Устанавливаем фото пользователя
+                    userImage2.src = user.photoURL; // ✅ Устанавливаем фото пользователя
+                    userImage.style.display = "block"; // Делаем фото видимым
+                } else {
+                    userImage.style.display = "none"; // ❌ Полностью скрываем фото, если его нет
+                    userImage2.src = "/home/src/icons/account__default-img.png";
+                }
+            } else {
+                headButtons.style.display = "flex"; // ✅ Показываем кнопки входа
+                accountSection.style.display = "none"; // ❌ Полностью скрываем секцию аккаунта
+                userImage.style.display = "none"; // ❌ Убираем картинку
+            }
+        });
+
+
+        // 🔹 Выход из аккаунта
+        logoutBtn.addEventListener("click", () => {
+            signOut(auth).then(() => {
+                window.location.reload(); // ✅ Просто обновляем страницу после выхода
+            }).catch(error => {
+                alert("Ошибка при выходе: " + error.message);
+            });
+        });
+</script>
+</body>
+</html>
