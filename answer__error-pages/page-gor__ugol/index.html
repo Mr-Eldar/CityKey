@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/99e90e9a29.js" crossorigin="anonymous" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=0a5d7bb5-8c65-4ec0-a31c-c10add8cf9c5&lang=ru_RU"></script>
+    <link rel="stylesheet" href="/answer__error-pages/page-gor__ugol/css/main.css">
+    <title>Городской Ключ</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="head__navigation">
+                <ul class="navigation">
+                    <li class="nav__item">
+                        <img class="head__logo" src="/home/src/citykey__logo.png" alt="logo">
+                    </li>
+                    <li class="nav__item">
+                        <ul class="item__links">
+                            <li class="links__item">
+                                <a href="/home/index.html">Главная</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="/home/index.html#main__content">О нас</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="/home/index.html#category">Категории</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="/home/index.html#volonterstvo">Волонтерство</a>
+                            </li>
+                            <li class="links__item">
+                                <a href="/home/index.html#reviews">Отзывы</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <div id='head__buttons' class="head__buttons">
+                            <a href="/register/register_login.html"><div class="btn__reg">Регистрация</div></a>
+                            <div class="vertical__line"></div>
+                            <a href="/register/register_login.html"><div class="btn__log">Вход</div></a>
+                        </div>
+                        <div class="account">
+                            <a href="/account/index.html"><span id="user-name"></span></a>
+                            <!-- Элемент для отображения изображения пользователя -->
+                            <img id="user-image" src="" alt="User Image">
+                            <!-- <button id="logout-btn">Выйти</button>   -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="main__title">Городские уголки</h1>
+        <p class="main__text">Маленькие, но важные детали делают город уютным! Сообщайте о грязных фасадах, разбитых витринах, неработающих фонтанах или других элементах городской среды.</p>
+
+        <div class="answer-your-problem__block">
+            <div id="map"></div>
+            <div class="ayp-block__inputs">
+                <input type="text" placeholder="Ваше имя...">
+                <input type="text" placeholder="Ваша фамилия...">
+                <input type="text" placeholder="Ваше отчество...">
+                <input type="tel" placeholder="Ваш номер телефона">
+                <input type="email" placeholder="Ваша почта...">
+                <input type="adress" placeholder="Адрес вашей пролемы...">
+                <textarea placeholder="Введите описание..."></textarea>
+                <div class="btnSubmit">Отправить</div>
+            </div>
+        </div>
+
+        <div class="statistika">
+            <h1 class="stat__title">Статистика</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Сообщено проблем</p>
+                    <span class="stat-number">50</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Решено</p>
+                    <span class="stat-number">38</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <p>В обработке</p>
+                    <span class="stat-number">12</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer__logo">
+            <img src="/home/src/citykey__logo.png" alt="">
+        </div>
+        <ul class="footer__list">
+            <li class="footer__item">
+                <ul class="item__list">
+                    <h3 class="footer-list__title">Быстрые ссылки</h3>
+                    <li class="fl__item">Главная</li>
+                    <li class="fl__item">О Нас</li>
+                    <li class="fl__item">Категории</li>
+                    <li class="fl__item">Волонтерство</li>
+                    <li class="fl__item">Отзывы</li>
+                </ul>
+            </li>
+            <li class="footer__item">
+                <ul class="item__list">
+                    <h3 class="footer-list__title">Быстрые ссылки</h3>
+                    <li class="fl__item">Стать волонтером</li>
+                    <li class="fl__item">Быстрые линии</li>
+                    <li class="fl__item">Сообщить о проблеме</li>
+                </ul>
+            </li>
+            <li class="footer__item">
+                <ul class="item__list">
+                    <h3 class="footer-list__title">Быстрые ссылки</h3>
+                    <li class="fl__item">Youtube</li>
+                    <li class="fl__item">Instagram</li>
+                    <li class="fl__item">Twitter</li>
+                    <li class="fl__item">Facebook</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="links__list">
+            <h3 class="link-list__title">Мы есть</h3>
+            <div class="links__block">
+                <li class="links__item">
+                    <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li class="links__item">
+                    <i class="fa-brands fa-instagram"></i>
+                </li>
+                <li class="links__item">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </li>
+                <li class="links__item">
+                    <i class="fa-brands fa-facebook"></i>
+                </li>
+            </div>
+        </ul>
+
+        <div class="copyrigth__block">
+            <div class="cb__line"></div>
+            <p class="cb__title">©Все права защищены 2025</p>
+        </div>
+    </footer>
+
+    <div class="buttonOnUp">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <script src="/answer__error-pages/page-bez__put/js/app.js"></script>
+    <script src="/answer__error-pages/page-bez__put/js/maps.js"></script>
+    <script type="module">
+        import { 
+            initializeApp 
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+
+        import { 
+            getAuth, 
+            onAuthStateChanged, 
+            signOut 
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // 🔹 Firebase конфигурация
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2ip3ZNS23CkckzbayIBUGzjzeV4ehngw",
+            authDomain: "citykey-45fda.firebaseapp.com",
+            projectId: "citykey-45fda",
+            storageBucket: "citykey-45fda.firebasestorage.app",
+            messagingSenderId: "339147353166",
+            appId: "1:339147353166:web:5c83b83a5eaf11b9c6271f"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // 🔹 Элементы страницы
+        const userNameSpan = document.getElementById("user-name");
+        const logoutBtn = document.getElementById("logout-btn");
+        const accountSection = document.querySelector(".account");
+        const headButtons = document.getElementById("head__buttons");
+        const userImage = document.getElementById("user-image"); // Элемент для изображения
+
+        // 🔹 Проверяем, авторизован ли пользователь
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                headButtons.style.display = "none"; // ❌ Скрываем кнопки "Вход" и "Регистрация"
+                accountSection.style.display = "flex"; // ✅ Показываем секцию аккаунта
+
+                userNameSpan.textContent = user.displayName || "Пользователь";
+
+                if (user.photoURL) {
+                    userImage.src = user.photoURL; // ✅ Устанавливаем фото пользователя
+                    userImage.style.display = "block"; // Делаем фото видимым
+                } else {
+                    userImage.style.display = "none"; // ❌ Полностью скрываем фото, если его нет
+                }
+            } else {
+                headButtons.style.display = "flex"; // ✅ Показываем кнопки входа
+                accountSection.style.display = "none"; // ❌ Полностью скрываем секцию аккаунта
+                userImage.style.display = "none"; // ❌ Убираем картинку
+            }
+        });
+
+        // 🔹 Выход из аккаунта
+        logoutBtn.addEventListener("click", () => {
+            signOut(auth).then(() => {
+                window.location.reload(); // ✅ Просто обновляем страницу после выхода
+            }).catch(error => {
+                alert("Ошибка при выходе: " + error.message);
+            });
+        });
+</script>
+</body>
+</html>
