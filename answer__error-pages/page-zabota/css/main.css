@@ -221,6 +221,13 @@ main {
     border-radius: 10px;
 }
 
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 .btnSubmit {
     width: 500px;
     height: 40px;
@@ -234,7 +241,20 @@ main {
     transition: var(--transition);
 }
 
-.btnSubmit:hover {
+.btnFindAdress {
+    width: 500px;
+    height: 40px;
+    background: var(--accent-color);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.btnSubmit:hover, .btnFindAdress:hover {
     border: 3px solid var(--accent-color);
     background: none;
     cursor: pointer;
