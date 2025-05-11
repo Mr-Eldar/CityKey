@@ -1,5 +1,6 @@
 const reviewsContainer = document.querySelector('.reviews-container')
 const btnOnUp = document.querySelector('.buttonOnUp')
+const scrollNav = document.querySelector('.head__navigation')
 let slides = document.querySelectorAll('.slide')
 let currentIndex = 0
 let slideInterval

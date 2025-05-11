@@ -149,13 +149,13 @@ body {
 
 main {
     width: 100%;
-    height: 1550px;
+    height: 100%;
     background: #24343f;
     position: relative;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: center; */
+    justify-content: center;
 }
 
 .main__title {
@@ -181,21 +181,29 @@ main {
     width: 1000px;
     height: 500px;
     position: absolute;
-    top: 250px;
+    top: 200px;
     left: 50%;
-    transform: translate(-51%);
+    transform: translate(-50%);
+}
+
+.answer-your-problem__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
 }
 
 .ayp-block__inputs {
     display: flex;
     align-items: center;
     /* flex-direction: column; */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    position: relative;
-    top: 50rem;
+    /* position: relative; */
+    margin-top: 40rem;
     width: 1020px;
-    left: 15.5%;
+    /* left: 15.5%; */
 }
 
 .ayp-block__inputs input, textarea {
@@ -261,9 +269,8 @@ main {
 }
 
 .statistika {
-    position: absolute;
-    top: 72rem;
     width: 100%;
+    margin-top: 100px;
 }
 
 .stat__title {
@@ -314,6 +321,53 @@ main {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.2rem;
     margin-bottom: 25px;
+}
+
+/*! Users Comments */
+
+.comments {
+    margin-bottom: 50px;
+}
+
+.comments__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+
+.comments__title {
+    color: var(--white-color);
+    text-align: center;
+    margin: 50px;
+    font-size: 36px;
+}
+
+.comment__item {
+    width: 650px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.comment__item:hover {
+    scale: 1.07;
+}
+
+.comment__text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgb(231, 231, 231);
+}
+
+.comment__author {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--accent-color);
 }
 
 /*! Footer */
