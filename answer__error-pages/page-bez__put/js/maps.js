@@ -18,7 +18,7 @@ function init(){
 			{
 				iconLayout: 'default#image',
 				iconImageHref:
-					'/answer__error-pages/page-bez__put/src/icons/placeMark.png',
+					'/CityKey/answer__error-pages/page-bez__put/src/icons/placeMark.png',
 				iconImageSize: [35, 35],
 				iconImageOffset: [-20, -40],
 				draggable: true,
