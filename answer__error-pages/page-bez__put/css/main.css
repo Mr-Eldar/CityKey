@@ -288,7 +288,7 @@ main {
 .stats {
     display: flex;
     justify-content: center;
-    gap: 175px;
+    gap: 100px;
     text-align: center;
 }
 
@@ -496,4 +496,44 @@ footer {
 .buttonOnUp:hover {
     background: var(--accent-color);
     color: var(--background);
+}
+
+/*! submitProblemAlert */
+
+.submitProblemAlert {
+    width: 500px;
+    height: 150px;
+    background: #1c2c36;
+    color: var(--white-color);
+    border-radius: 15px;
+    position: fixed;
+    top: 6%;
+    right: 40px;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    transform: translate(100%);
+    opacity: 0;
+    transition:var(--transition);
+}
+
+.submitProblemAlert.active {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.submitProblemAlert i {
+    font-size: 45px;
+    color: var(--accent-color);
+    margin-right: 15px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }

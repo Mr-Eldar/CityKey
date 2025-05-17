@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/99e90e9a29.js" crossorigin="anonymous" defer></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=0a5d7bb5-8c65-4ec0-a31c-c10add8cf9c5&lang=ru_RU"></script>
-    <link rel="stylesheet" href="/answer__error-pages/page-zel__erath/css/main.css">
+    <link rel="stylesheet" href="/CityKey/answer__error-pages/page-zel__erath/css/main.css">
     <title>Городской Ключ</title>
 </head>
 <body>
@@ -14,35 +14,35 @@
             <div class="head__navigation">
                 <ul class="navigation">
                     <li class="nav__item">
-                        <img class="head__logo" src="/home/src/citykey__logo.png" alt="logo">
+                        <img class="head__logo" src="/CityKey/home/src/citykey__logo.png" alt="logo">
                     </li>
                     <li class="nav__item">
                         <ul class="item__links">
                             <li class="links__item">
-                                <a href="/home/index.html">Главная</a>
+                                <a href="/CityKey/home/index.html">Главная</a>
                             </li>
                             <li class="links__item">
-                                <a href="/home/index.html#main__content">О нас</a>
+                                <a href="/CityKey/home/index.html#main__content">О нас</a>
                             </li>
                             <li class="links__item">
-                                <a href="/home/index.html#category">Категории</a>
+                                <a href="/CityKey/home/index.html#category">Категории</a>
                             </li>
                             <li class="links__item">
-                                <a href="/home/index.html#volonterstvo">Волонтерство</a>
+                                <a href="/CityKey/home/index.html#volonterstvo">Волонтерство</a>
                             </li>
                             <li class="links__item">
-                                <a href="/home/index.html#reviews">Отзывы</a>
+                                <a href="/CityKey/home/index.html#reviews">Отзывы</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav__item">
                         <div id='head__buttons' class="head__buttons">
-                            <a href="/register/register_login.html"><div class="btn__reg">Регистрация</div></a>
+                            <a href="/CityKey/register/register_login.html"><div class="btn__reg">Регистрация</div></a>
                             <div class="vertical__line"></div>
-                            <a href="/register/register_login.html"><div class="btn__log">Вход</div></a>
+                            <a href="/CityKey/register/register_login.html"><div class="btn__log">Вход</div></a>
                         </div>
                         <div class="account">
-                            <a href="/account/index.html"><span id="user-name"></span></a>
+                            <a href="/CityKey/account/index.html"><span id="user-name"></span></a>
                             <!-- Элемент для отображения изображения пользователя -->
                             <img id="user-image" src="" alt="User Image">
                             <!-- <button id="logout-btn">Выйти</button>   -->
@@ -92,6 +92,11 @@
                     <p>В обработке</p>
                     <span class="stat-number">25</span>
                 </div>
+                <div class="stat-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <p>Время решения</p>
+                    <span class="stat-number">~3 дня</span>
+                </div>
             </div>
         </div>
 
@@ -120,17 +125,17 @@
 
     <footer>
         <div class="footer__logo">
-            <img src="/home/src/citykey__logo.png" alt="">
+            <img src="/CityKey/home/src/citykey__logo.png" alt="">
         </div>
         <ul class="footer__list">
             <li class="footer__item">
                 <ul class="item__list">
                     <h3 class="footer-list__title">Быстрые ссылки</h3>
-                    <li class="fl__item">Главная</li>
-                    <li class="fl__item">О Нас</li>
-                    <li class="fl__item">Категории</li>
-                    <li class="fl__item">Волонтерство</li>
-                    <li class="fl__item">Отзывы</li>
+                    <li class="fl__item"><a href="/CityKey/home/index.html">Главная</a></li>
+                    <li class="fl__item"><a href="/CityKey/home/index.html#main__content">О Нас</a></li>
+                    <li class="fl__item"><a href="/CityKey/home/index.html#category">Категории</a></li>
+                    <li class="fl__item"><a href="/CityKey/home/index.html#volonterstvo">Волонтерство</a></li>
+                    <li class="fl__item"><a href="/CityKey/home/index.html#reviews">Отзывы</a></li>
                 </ul>
             </li>
             <li class="footer__item">
@@ -179,8 +184,16 @@
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-    <script src="/answer__error-pages/page-bez__put/js/app.js"></script>
-    <script src="/answer__error-pages/page-bez__put/js/maps.js"></script>
+    <div class="submitProblemAlert">
+        <i class="fa-solid fa-hourglass-half"></i>
+        <div class="info">
+            <h2 class="info__title">Ваша заявка была принята!</h2>
+            <p class="info__description">В ближайшее время мы свяжемся с вами для обратной связи</p>
+        </div>
+    </div>
+
+    <script src="/CityKey/answer__error-pages/page-zel__erath/js/app.js"></script>
+    <script src="/CityKey/answer__error-pages/page-zel__erath/js/maps.js"></script>
     <script type="module">
         import { 
             initializeApp 
