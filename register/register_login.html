@@ -81,14 +81,14 @@
                     await user.reload(); // Обновляем данные пользователя
 
                     alert("Аккаунт успешно создан!");
-                    window.location.href = "/home/index.html"; // ✅ Переход на главную
+                    window.location.href = "/CityKey/index.html"; // ✅ Переход на главную
                 } catch (error) {
                     alert("Ошибка: " + error.message);
                 }
             } else {
                 try {
                     await signInWithEmailAndPassword(auth, email, password);
-                    window.location.href = "/home/index.html"; // ✅ Переход на главную
+                    window.location.href = "//CityKey/index.html"; // ✅ Переход на главную
                 } catch (error) {
                     console.log("Ошибка входа: " + error.message);
                 }
@@ -99,7 +99,7 @@
             try {
                 const result = await signInWithPopup(auth, provider);
                 // В случае успешного входа
-                window.location.href = "/home/index.html"; // Переход на главную страницу
+                window.location.href = "/CityKey/index.html"; // Переход на главную страницу
             } catch (error) {
                 console.log("Ошибка входа через Google: " + error.message);
             }
