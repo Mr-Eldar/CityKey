@@ -1,8 +1,8 @@
 const btnSubmit = document.getElementById('btnSubmit')
-const submitProblemAlert = document.querySelector('submitProblemAlert')
+const submitProblemAlert = document.querySelector('.submitProblemAlert')
 
 btnSubmit.addEventListener('click', () => {
-	let userPrompts = document.querySelectorAll('input')
+	let userPrompts = document.querySelectorAll('input[type="text"]')
 
 	userPrompts.forEach(prompt => {
 		prompt.value = ''
