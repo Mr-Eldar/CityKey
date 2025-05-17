@@ -311,7 +311,7 @@ body {
 /*! Main Content */
 
 .main__content {
-    background-image: url('/CityKey/register/bg.jpg');
+    background-image: url('bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -492,7 +492,7 @@ h1, p, button {
     background: #273947;
     position: relative;
     /* display: none; */
-    background-image: url('/CityKey/home/src/images/volontery.jpeg');
+    background-image: url('volontery.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
 }
